@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div style="float: left; margin-right: 25px">
+    <form method="post" action="/encrypt">
+        <input type="text" , name="content" placeholder="String for encryption"><br>
+        <input type="text" , name="key" placeholder="Secret key"><br>
+        <button type="submit">Encrypt</button>
+    </form>
+    <div>
+        <p th:text="'String for encryption:  ' + ${content}"/>
+        <p th:text="'Secret key:  ' + ${key}"/>
+        <p th:text="'Result:  ' + ${encrypt}"/>
+    </div>
+</div>
+<div>
+    <div>
+        <form method="post" action="/decrypt">
+            <input type="text" , name="contentdec" placeholder="String for decryption"><br>
+            <input type="text" , name="keydec" placeholder="Secret key"><br>
+            <button type="submit">Decrypt</button>
+        </form>
+        <div>
+            <p th:text="'String for decryption:  ' + ${contentdec}"/>
+            <p th:text="'Secret key:  ' + ${keydec}"/>
+            <p th:text="'Result:  ' + ${decrypt}"/>
+        </div>
+    </div>
+    <a href="/">Reset</a>
+</div>
+</body>
+</html>
